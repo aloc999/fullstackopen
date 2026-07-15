@@ -29,3 +29,39 @@ npm run dev
 | [courseinfo](part1/courseinfo) | 1.1–1.5 | Course info rendered with `Header`, `Content`/`Part`, `Total` components using props |
 | [unicafe](part1/unicafe) | 1.6–1.11 | Feedback app with `good`/`neutral`/`bad` buttons, `Statistics`/`StatisticLine` in an HTML table |
 | [anecdotes](part1/anecdotes) | 1.12–1.14 | Random software-engineering anecdotes with voting and "most votes" display |
+
+## Part 2 — Rendering a collection, forms, fetching/altering data, styles
+
+Three Vite + React apps. To run any of them:
+
+```bash
+cd part2/<app>
+npm install
+npm run dev
+```
+
+| App | Exercises | Description |
+| --- | --- | --- |
+| [courseinfo](part2/courseinfo) | 2.1–2.5 | `Course` as a separate module, rendering parts with `map`, total with `reduce`, supports multiple courses |
+| [phonebook](part2/phonebook) | 2.6–2.17 | Phonebook backed by `json-server` (port 3001) + axios; `Filter`/`PersonForm`/`Persons`/`Notification` components, services module, add/update/delete, success & error notifications |
+| [countries](part2/countries) | 2.18–2.20 | Country search against the Helsinki RESTCountries API; list with "show" buttons, single-country detail, capital weather via OpenWeatherMap |
+
+### Phonebook backend
+
+The phonebook uses `json-server`. Start it in a separate terminal:
+
+```bash
+cd part2/phonebook
+npm run server   # serves db.json on http://localhost:3001
+```
+
+### Countries weather (2.20)
+
+The weather report needs a free [OpenWeatherMap](https://openweathermap.org) API key. Copy the example
+env file and add your key, then restart the dev server:
+
+```bash
+cd part2/countries
+cp .env.example .env   # then set VITE_OPENWEATHER_API_KEY=<your key>
+npm run dev
+```
